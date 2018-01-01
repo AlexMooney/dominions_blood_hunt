@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Blood Hunt Calculator</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script defer type='text/javascript' src="./blood_hunt.js"></script>
+  <link rel="stylesheet" href="blood_hunt.css">
+  <meta name="author" content="Alex Mooney">
+  <meta name="description" content="This page helps players calculte their optimal blood hunting strategy for Dominions 5 from Illwinter games.">
+</head>
+<body>
+  <div id="app">
+    <div class="input-row">
+      <label for="hunters">Number of Hunters</label>
+      <div class="input">
+        <input id="hunters" type="number" min="0" max="20" v-model="hunters"></input>
+      </div>
+    </div>
+    <div class="input-row">
+      <label for="blood_level">Blood level</label>
+      <div class="input">
+        <input id="blood_level" type="number" min="0" max="20" v-model="blood_level"></input>
+      </div>
+    </div>
+    <div class="input-row">
+      <label for="upkeep">Annual Upkeep</label>
+      <div class="input">
+        <input id="upkeep" type="number" min="0" max="1000" step="5" v-model="upkeep"></input>
+      </div>
+    </div>
+    <div class="input-row">
+      <label for="starting_pop">Province Population</label>
+      <div class="input">
+        <input id="starting_pop" type="number" min="0" max="100000" step="100" v-model="starting_pop"></input>
+      </div>
+    </div>
+    <div class="input-row">
+      <label for="order">Order Scale</label>
+      <div class="input">
+        <input id="order" type="number" min="-3" max="3" v-model="order"></input>
+      </div>
+    </div>
+    <div class="input-row">
+      <label for="growth">Growth Scale</label>
+      <div class="input">
+        <input id="growth" type="number" min="-3" max="3" v-model="growth"></input>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Month</th>
+          <th scope="col">Population</th>
+          <th scope="col">Unrest</th>
+          <th scope="col">Income</th>
+          <th scope="col">Total Slaves</th>
+          <th scope="col">Lost Income</th>
+          <th scope="col">Lost Taxes</th>
+          <th scope="col">Upkeep</th>
+          <th scope="col">Total Gold</th>
+          <th scope="col">Gold / Slave</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="month in months">
+          <td>{{ month.number }}</td>
+          <td>{{ month.population }}</td>
+          <td>{{ month.unrest }}</td>
+          <td>{{ month.income }}</td>
+          <td>{{ month.slaves }}</td>
+          <td>{{ month.lost_income }}</td>
+          <td>{{ month.lost_taxes }}</td>
+          <td>{{ month.upkeep }}</td>
+          <td>{{ month.total_gold }}</td>
+          <td>{{ month.cost }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>

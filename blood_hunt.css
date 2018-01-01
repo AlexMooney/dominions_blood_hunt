@@ -1,0 +1,50 @@
+table {
+  border-collapse: collapse;
+  border: 0px solid purple;
+}
+
+th, td {
+  padding: 10px;
+}
+
+label, input, select, textarea {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: normal;
+}
+
+input, textarea, select {
+    -moz-border-radius: 3px 3px 3px 3px;
+    border: 1px solid #CCCCCC;
+    color: #808080;
+    display: inline-block;
+    font-size: 13px;
+    height: 18px;
+    line-height: 18px;
+    padding: 4px;
+    width: 60px;
+}
+
+select {
+    height: 27px;
+    line-height: 27px;
+}
+
+label {
+    color: #404040;
+    float: left;
+    font-size: 13px;
+    line-height: 18px;
+    padding-top: 6px;
+    text-align: right;
+    width: 130px;
+}
+
+.input-row {
+    margin-bottom: 18px;
+}
+
+.input {
+  margin-left: 150px;
+}
