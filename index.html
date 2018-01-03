@@ -9,7 +9,19 @@
   <meta name="description" content="This page helps players calculte their optimal blood hunting strategy for Dominions 5 from Illwinter games.">
 </head>
 <body>
-  <div id="app">
+  <div id="inputs">
+    <div class="input-row">
+      <label for="mc_rounds">Monte Carlo rounds</label>
+      <div class="input">
+        <input id="mc_rounds" type="number" min="1" max="20000" v-model="mc_rounds"></input>
+      </div>
+    </div>
+    <div class="input-row">
+      <label for="months">Months to hunt</label>
+      <div class="input">
+        <input id="months" type="number" min="0" max="20" v-model="months"></input>
+      </div>
+    </div>
     <div class="input-row">
       <label for="hunters">Number of Hunters</label>
       <div class="input">
@@ -46,6 +58,8 @@
         <input id="growth" type="number" min="-3" max="3" v-model="growth"></input>
       </div>
     </div>
+  </div>
+  <div id="results">
     <table>
       <thead>
         <tr>
@@ -70,7 +84,7 @@
           <td>{{ month.slaves }}</td>
           <td>{{ month.lost_income }}</td>
           <td>{{ month.lost_taxes }}</td>
-          <td>{{ month.upkeep }}</td>
+          <td>{{ upkeep }}</td>
           <td>{{ month.total_gold }}</td>
           <td>{{ month.cost }}</td>
         </tr>
